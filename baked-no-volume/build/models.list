@@ -1,0 +1,31 @@
+# ============================================================
+#  Models to BAKE into the image (downloaded at build time).
+#  Format (3 parts separated by | ):
+#      folder | download-url | filename-to-save-as
+#
+#  folder = ComfyUI models subfolder:
+#    checkpoints | diffusion_models | loras | vae | text_encoders |
+#    clip | clip_vision | controlnet | upscale_models | embeddings
+#
+#  Lines starting with # are ignored. HF URLs use HF_TOKEN.
+#  CivitAI URLs get CIVITAI_TOKEN appended. Skip-if-exists.
+#  After editing: commit -> push -> rebuild.
+# ============================================================
+
+# --- FLUX.2 [dev] (fp8mixed — fits a 32 GB RTX 5090) ---
+diffusion_models | https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/diffusion_models/flux2_dev_fp8mixed.safetensors | flux2_dev_fp8mixed.safetensors
+text_encoders    | https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/text_encoders/mistral_3_small_flux2_fp8.safetensors | mistral_3_small_flux2_fp8.safetensors
+vae              | https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors | flux2-vae.safetensors
+
+# --- Z-Image Turbo (bf16) ---
+diffusion_models | https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors | z_image_turbo_bf16.safetensors
+text_encoders    | https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors | qwen_3_4b.safetensors
+vae              | https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors | ae.safetensors
+
+# --- Z-Image base (bf16) ---
+# Shares qwen_3_4b text encoder + ae vae with Turbo above (auto-skipped, no re-download).
+diffusion_models | https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/diffusion_models/z_image_bf16.safetensors | z_image_bf16.safetensors
+
+# --- LoRAs ---
+# Empty. Add your trained rezz LoRA here once ready, e.g.:
+# loras | https://civitai.com/api/download/models/123456 | rezz-flux.safetensors

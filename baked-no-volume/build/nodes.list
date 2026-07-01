@@ -1,0 +1,42 @@
+# ============================================================
+#  ComfyUI custom nodes — one git URL per line.
+#  Lines starting with # are comments and are ignored.
+#  To ADD a node:    paste its GitHub URL on a new line.
+#  To REMOVE a node: delete its line (or put # in front).
+#  After editing: commit -> push -> rebuild.
+# ============================================================
+
+# --- essential / foundational ---
+https://github.com/ltdrdata/ComfyUI-Manager
+https://github.com/rgthree/rgthree-comfy
+https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+https://github.com/cubiq/ComfyUI_essentials
+https://github.com/kijai/ComfyUI-KJNodes
+
+# --- big multi-purpose packs ---
+https://github.com/ltdrdata/was-node-suite-comfyui
+https://github.com/ltdrdata/ComfyUI-Impact-Pack
+https://github.com/jags111/efficiency-nodes-comfyui
+
+# --- conditioning / style / control ---
+https://github.com/cubiq/ComfyUI_IPAdapter_plus
+https://github.com/Fannovel16/comfyui_controlnet_aux
+https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet
+https://github.com/chflame163/ComfyUI_LayerStyle
+
+# --- vision / captioning ---
+https://github.com/kijai/ComfyUI-Florence2
+
+# --- upscaling / quantization ---
+https://github.com/ssitu/ComfyUI_UltimateSDUpscale
+https://github.com/city96/ComfyUI-GGUF
+
+# --- video / animation ---
+https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
+https://github.com/kijai/ComfyUI-WanVideoWrapper
+
+# --- FLUX.2 / Z-Image loaders ---
+# TODO (model-list step): add the exact loader nodes FLUX.2 [dev] and
+# Z-Image Turbo require, once verified against current ComfyUI.

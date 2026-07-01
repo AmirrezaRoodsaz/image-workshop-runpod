@@ -1,0 +1,29 @@
+# Secrets — NEVER commit
+.env
+*.token
+*token*.txt
+
+# Model files — these are baked into the image at build time, never stored in git
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.gguf
+models/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+logs/
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/
+*.swp
