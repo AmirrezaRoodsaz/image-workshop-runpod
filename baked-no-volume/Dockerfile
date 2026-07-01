@@ -47,6 +47,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
 #   software-properties-common : lets us add the deadsnakes PPA below
 #   unzip, nano, tmux       : small quality-of-life tools
 # The `rm -rf /var/lib/apt/lists/*` at the end trims the layer size.
+# Make apt robust over the (rootless) build network: no HTTP pipelining
+# (which truncates index files -> "package not found"), force IPv4, retry.
+RUN printf 'Acquire::ForceIPv4 "true";\nAcquire::http::Pipeline-Depth "0";\nAcquire::Retries "5";\n' \
+        > /etc/apt/apt.conf.d/99network
 RUN apt-get update && apt-get install -y --no-install-recommends \
         git wget curl aria2 ca-certificates \
         build-essential cmake \
