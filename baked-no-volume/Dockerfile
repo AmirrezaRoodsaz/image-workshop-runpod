@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 # =============================================================================
 #  image-workshop-baked — Dockerfile
 #  Method A: everything baked into the image, no network volume needed.
